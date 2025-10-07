@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Biglietto Attivo — Copia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#f7f7f9;--card:#fff;--muted:#6b7280;--accent:#111827}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial; background:linear-gradient(180deg,#f4f6f8 0%,#f7f7f9 100%);color:var(--accent);margin:0;padding:24px;display:flex;align-items:center;justify-content:center;min-height:100vh}
+    .wrap{width:360px}
+    header{font-weight:700;margin-bottom:12px}
+    .card{background:var(--card);border-radius:14px;padding:18px;box-shadow:0 6px 24px rgba(16,24,40,0.08);position:relative;overflow:hidden}
+    .brand{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+    .brand img{width:46px;height:46px;border-radius:8px}
+    .brand h1{font-size:13px;margin:0}
+    .badge{font-size:11px;color:var(--muted);font-weight:600}
+
+    .profile{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;background:#fbfdff}
+    .avatar{width:56px;height:56px;border-radius:12px;flex:0 0 56px;background:linear-gradient(135deg,#e6eefc,#f4f7ff);display:flex;align-items:center;justify-content:center;font-weight:700;overflow:hidden}
+    .avatar img{width:100%;height:100%;border-radius:12px;object-fit:cover}
+    .meta{flex:1}
+    .meta .name{font-weight:700}
+    .meta .code{font-size:12px;color:var(--muted);margin-top:4px}
+
+    .ticket-info{display:grid;grid-template-columns:1fr auto;gap:12px;margin-top:14px;align-items:center}
+    .left{font-size:13px}
+    .left .line{display:flex;justify-content:space-between;margin:6px 0}
+    .qr{width:110px;height:110px;border-radius:12px;background:#f3f4f6;display:flex;align-items:center;justify-content:center}
+
+    .small{font-size:12px;color:var(--muted)}
+    .price{font-weight:700;margin-top:10px}
+
+    .zigzag{position:absolute;right:-40px;top:-40px;opacity:0.12;transform:rotate(10deg)}
+    .zigzag svg{width:220px;height:220px}
+
+    footer{margin-top:12px;font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+
+    @media (max-width:400px){.wrap{width:320px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>Ticket attivo</header>
+
+    <main class="card" role="main">
+      <div class="zigzag" aria-hidden>
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+          <path d="M0 40 L30 20 L60 60 L90 30 L120 70 L150 40 L180 80 L200 60" stroke="#111" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+
+      <div class="brand">
+        <img src="https://enrysomma.github.io/abbonamento/img/asf-logo.png" alt="ASF Logo" onerror="this.style.display='none'">
+        <div>
+          <div class="badge">ANNUALE AREA URBANA DI COMO</div>
+        </div>
+      </div>
+
+      <section class="profile" aria-labelledby="card-title">
+        <div class="avatar">
+          <img src="https://github.com/Gorillo99/abbonamento/blob/1a35a993bd014fb638ab37ba0e9b245eb63dc869/io.jpeg?raw=true" alt="Foto profilo">
+        </div>
+        <div class="meta">
+          <div id="card-title" class="name">Thiago Rodriguez</div>
+          <div class="code">RDRTHG07B20B639I</div>
+          <div class="code">Card no. 7392/3859</div>
+          <div class="code">Expiry date: 01/01/2029</div>
+        </div>
+      </section>
+
+      <div class="ticket-info">
+        <div class="left">
+          <div class="line"><span class="small">Valido dal</span><span class="small">13/09/2025 a 31/08/2026</span></div>
+          <div class="line"><span class="small">Emesso il</span><span class="small">11/09/2025 - 13:32</span></div>
+          <div class="price">Costo 341,00 €</div>
+        </div>
+
+        <div class="qr" title="QR Code">
+          <svg width="72" height="72" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+            <rect x="4" y="4" width="22" height="22" fill="#111"/>
+            <rect x="46" y="4" width="22" height="22" fill="#111"/>
+            <rect x="4" y="46" width="22" height="22" fill="#111"/>
+            <rect x="28" y="28" width="16" height="16" fill="#111"/>
+          </svg>
+        </div>
+      </div>
+
+      <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+        <div style="display:flex;gap:8px;align-items:center">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden>
+            <circle cx="12" cy="12" r="10" stroke="#111" stroke-width="1.2" fill="none"/>
+            <path d="M8 12h8" stroke="#111" stroke-width="1.2"/>
+          </svg>
+          <span class="small">--:--:--</span>
+        </div>
+
+        <div style="margin-left:auto;font-weight:700">968</div>
+      </div>
+
+      <div style="border-top:1px dashed #e6e9ef;margin-top:14px;padding-top:10px;display:flex;justify-content:space-between;align-items:center">
+        <div class="small">Dettagli · Leggi tutto</div>
+        <button aria-label="Trasferisci ticket" style="background:none;border:0;font-weight:700;color:var(--muted);cursor:pointer">Trasferisci</button>
+      </div>
+
+    </main>
+
+    <footer>
+      <div>ASF Autolinee Srl · P.IVA 02660190139</div>
+      <div class="small">Codice Ticket: 10130/98360</div>
+    </footer>
+  </div>
+</body>
+</html>
